@@ -1,9 +1,9 @@
-let date = new Date();
-console.log(date);
-date.setDate(date.getDate() - 20);
+// let date = new Date("2023-02-15");
+// console.log(date);
+// date.setDate(date.getDate() - 15);
 
-var newDate = date.getFullYear() + '-'+ (date.getMonth()+1) +'-'+date.getDate();
-console.log(newDate);
+// var newDate = date.getFullYear() + '-'+ (date.getMonth()+1) +'-'+date.getDate();
+// console.log(newDate);
 
 
 let startDate = "2023-01-30";
@@ -40,7 +40,6 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
       let container = document.getElementById("container");
       container.appendChild(letter);
       letter.innerHTML = words[j];
-
     }
 
     
@@ -60,16 +59,12 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
         newTop =  map(reversedResponse[i].open, 3700, 4500, 400, 0);
         letter.style.top = newTop + "px";
 
-        
-
       } else {
       // if it's green
         letter.style.color = "green";
         letter.style.transformOrigin = "bottom";
         newTop =  map((reversedResponse[i].open), 3700, 4500, 400, 0);
         letter.style.top = newTop + "px";
-
-        
       }
 
       let height = map(Math.abs(candleStick1), -10, 50, 0, 15);
@@ -81,12 +76,9 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
       
      
   
-      console.log(newTop)
+      // console.log(newTop)
 
     }
-
-  
-
   })
 
 
