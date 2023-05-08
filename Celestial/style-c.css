@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#questions{
+    position: fixed;
+    top: 50px;
+    width: 100vw;
+    height: 100vh;
+    color: #cc2228;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: black; */
+    font-size: 1em;
+    font-family: 'Optima';
+}
+
+#name{
+    position: absolute;
+    top: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Optima';
+}
+
+input {
+    width: 350px;
+    border: none;
+    border-bottom: 2px solid #cc2228;
+    background: transparent;
+    font-family: 'Optima';
+    font-size: 2em;
+    color: #cc2228;
+    text-align: center;
+  }
+
+#prompt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Optima';
+    font-size: 2em;
+    text-align: center;
+}
+
+#dotButton{
+    /* position: fixed; */
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transform: translateY(-25%);
+    /* transform-origin: center; */
+    /* filter: blur(2px); */
+}
+
+#dotScale {
+    position: relative;
+    color: 255, 237, 142;
+}
+
+#dotParent{
+    top: 45vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transform-origin: center;
+}
+
+#submit {
+    background-color: transparent;
+    /* color:  rgb(255, 184, 0);
+    border: 1px solid rgb(255, 184, 0); */
+    color: #cc2228;
+    border: 1px solid #cc2228;
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+    font-family: 'Optima';
+    font-size: 1em;
+}
+

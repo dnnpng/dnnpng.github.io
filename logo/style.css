@@ -1,0 +1,23 @@
+#container {
+     /* position: fixed; */
+     display: flex;
+     /* justify-content: space-between; */
+     margin-top: 50px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 520px;
+     height: 500px;
+     font-family: 'Roboto Flex', sans-serif;
+     font-size: 8em;
+     /* font-variation-settings: 'YTUC' 600; */
+     text-transform: uppercase;
+     /* background-color:aquamarine; */
+
+}
+
+.letter {
+    position: relative;
+    margin-right: 2px;
+    height: fit-content;
+    margin-top: -50px;
+  }
