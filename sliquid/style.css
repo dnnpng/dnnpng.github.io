@@ -1,0 +1,63 @@
+/* body {
+    background-image: url("liquid.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+} */
+
+
+.container {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 25px;
+    position: relative;
+    width: 250px; 
+    height: 250px; 
+    background-color: #ECECEC;
+
+}
+
+.shapecontainer {
+    display: flex;
+    /* filter: blur(10px); */
+    width: 250px;
+    height: 125px;
+    position: absolute;
+    top: 35px;
+}
+
+.lube {
+    width: 100px;
+    height: 100px;  
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    margin: auto;
+}
+
+
+.leftDiv {
+    width: 75px;
+    height: 75px;  
+    border-radius: 50%;
+    display: flex;
+    transform: translate(50%, 15%);
+    position: relative;
+    left: 20px;
+    top: 15px; 
+}
+
+.leftDiv + .lube{
+    left: -20px;
+}
+
+
+.description {
+    text-align: center;
+    font-size: 0.75em;
+    margin-top: 25px;
+    position: relative;
+    font-family: 'Roboto Flex', sans-serif;
+    top: 150px;
+
+}
+
