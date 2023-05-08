@@ -6,11 +6,8 @@ var newDate = date.getFullYear() + '-'+ (date.getMonth()+1) +'-'+date.getDate();
 console.log(newDate);
 
 
-// let startDate = "2023-01-30";
-// let endDate = "2023-02-15";
-
-let startDate = "2013-09-25";
-let endDate = "2013-10-11";
+let startDate = "2023-01-30";
+let endDate = "2023-02-15";
 
 
 function map(value, low1, high1, low2, high2) {
@@ -60,7 +57,7 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
         letter.style.color = "red";
         letter.style.transformOrigin = "top";
         candleStick1 = Math.abs(candleStick1)
-        newTop =  map(reversedResponse[i].open, 1650, 1720, 250, 0);
+        newTop =  map(reversedResponse[i].open, 3700, 4500, 400, 0);
         letter.style.top = newTop + "px";
 
         
@@ -69,13 +66,13 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
       // if it's green
         letter.style.color = "green";
         letter.style.transformOrigin = "bottom";
-        newTop =  map((reversedResponse[i].open), 1650, 1720, 250, 0);
+        newTop =  map((reversedResponse[i].open), 3700, 4500, 400, 0);
         letter.style.top = newTop + "px";
 
         
       }
 
-      let height = map(Math.abs(candleStick1), -10, 50, 0, 25);
+      let height = map(Math.abs(candleStick1), -10, 50, 0, 15);
       letter.style.transform = "scale(1," + height/10 + ")";
 
       // let height = map(Math.abs(candleStick1), 0, 32, 528, 760);
