@@ -67,7 +67,7 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
         letter.style.top = newTop + "px";
       }
 
-      let height = map(Math.abs(candleStick1), -10, 50, 0, 15);
+      let height = map(Math.abs(candleStick1), -10, 50, 0, 12);
       letter.style.transform = "scale(1," + height/10 + ")";
 
       // let height = map(Math.abs(candleStick1), 0, 32, 528, 760);
