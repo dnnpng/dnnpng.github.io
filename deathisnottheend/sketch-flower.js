@@ -25,15 +25,15 @@ let dotScale = document.querySelector("#dotScale");
 dotButton.addEventListener("mousedown", ()=>{
   let interval = setInterval(() => {
     if(diameter>maxDiameter){
-      diameter=15;
+      diameter=10;
       dotButton.style.width = `${diameter}px`
       // dotButton.style.height = `${diameter}px`
-      dotScale.innerHTML = Math.round(map(diameter, 15, maxDiameter, 0, 100));
+      dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
     }else{
       diameter=diameter+1;
       dotButton.style.width = `${diameter}px`
       // dotButton.style.height = `${diameter}px`
-      dotScale.innerHTML = Math.round(map(diameter, 15, maxDiameter, 0, 100));
+      dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
     }
   }, 20);
   dotButton.addEventListener("mouseup", ()=>{
@@ -58,8 +58,8 @@ submit.addEventListener("click", ()=>{
 
   let json_str = JSON.stringify(responseArray);
 
-  setCookie("responseArray", json_str, 30);
-  setCookie("orbCount", responseCount, 30);
+  setCookie("responseArray", json_str, 3000);
+  setCookie("orbCount", responseCount, 3000);
 
   let questions = document.querySelector("#questions");
   // questions.style.display = "none";
@@ -103,20 +103,17 @@ class Flower {
   display() {
     push();
     translate(this.x, this.y);
-
     push();
-    noStroke();
+    strokeWeight(.5);
+    stroke("#554D46");
     rotate(this.angle);
     fill(this.fillColor);
-    // drawingContext.shadowOffsetX = 5;
-    drawingContext.shadowOffsetY = 5;
-    drawingContext.shadowBlur = 10;
-    drawingContext.shadowColor = 'black';
-    // drawingContext.filter = 'contrast(5%)';
-    // filter(THRESHOLD);
+    drawingContext.filter = "drop-shadow(0px 2px 3px black)";
+
+    // filter(THRESHOLD, .5);
     // filter(INVERT);
     for (let i = 0; i < 10; i ++) {
-    ellipse(0, this.diameter/2, 15, this.diameter);
+    ellipse(0, this.diameter/4, 11, this.diameter/2);
     rotate(PI/5);
     }
     pop();
@@ -148,8 +145,9 @@ function createFlower(data) {
     color(255, 52, 52, 200)
   ];
 
-  let chosenColor = listOfColors[int(random(0, listOfColors.length))];
-    // fill(color(208, 107, 255, 250)); 
+  // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
+  let chosenColor = "#DAC8B2"; 
+  
   // noStroke();
 
   let currentFlower = new Flower(d, chosenColor, name)
@@ -162,7 +160,7 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   canvas.getContext("2d", {
     willReadFrequently: true,
-});
+  });
   frameRate(60)
 
   for (var i = 0; i < responseCount; i+=1) {
@@ -181,8 +179,8 @@ function setup(){
       color(255, 52, 52, 200)
     ];
 
-    let chosenColor = listOfColors[int(random(0, listOfColors.length))];
-      // fill(color(208, 107, 255, 250));
+    // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
+    let chosenColor = "#DAC8B2";
 
     let currentFlower = new Flower(d, chosenColor)
     // drawing flowers
@@ -196,12 +194,9 @@ function setup(){
 }
 
 function draw(){
-  let bg = color("#000000");
+  let bg = color("#13100C");
   background(bg);
-  
 
-  strokeWeight(.75);
-  stroke(0);
 
   for (let i = 0; i < flowerList.length; i++) {
     flowerList[i].move();

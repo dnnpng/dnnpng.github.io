@@ -6,14 +6,14 @@
 
 #questions{
     position: fixed;
-    top: 50px;
+    top: 0px;
     width: 100vw;
     height: 100vh;
     color: #cc2228;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: black; */
+    background-color: #13100C;
     font-size: 1em;
     font-family: 'Optima';
 }
@@ -40,6 +40,7 @@ input {
 
 #prompt{
     display: flex;
+    margin-top: 50px;
     flex-direction: column;
     align-items: center;
     font-family: 'Optima';
@@ -50,8 +51,8 @@ input {
 #dotButton{
     /* position: fixed; */
     background-color: white;
-    width: 15px;
-    height: 15px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     transform: translateY(-25%);
     /* transform-origin: center; */
