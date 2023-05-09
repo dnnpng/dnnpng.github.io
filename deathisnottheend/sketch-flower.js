@@ -62,7 +62,7 @@ submit.addEventListener("click", ()=>{
   setCookie("orbCount", responseCount, 3000);
 
   let questions = document.querySelector("#questions");
-  // questions.style.display = "none";
+  questions.style.display = "none";
   createFlower(responseArray[responseArray.length-1])
 
 })
@@ -108,7 +108,7 @@ class Flower {
     stroke("#554D46");
     rotate(this.angle);
     fill(this.fillColor);
-    drawingContext.filter = "drop-shadow(0px 2px 3px black)";
+    // drawingContext.filter = "drop-shadow(0px 2px 3px black)";
 
     // filter(THRESHOLD, .5);
     // filter(INVERT);
@@ -121,7 +121,7 @@ class Flower {
       textAlign(CENTER)
       textSize(20)
       textFont('Optima');
-      fill(255, 255, 255);
+      fill("#cc2228");
       text(this.name, 0, 0);
       text(this.d, 0, 20);
     }
