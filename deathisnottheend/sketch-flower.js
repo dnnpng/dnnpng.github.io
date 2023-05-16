@@ -78,6 +78,7 @@ if (getCookie("responseArray") == ''){
 }
 
 let flowerList = []
+let over = false;
 
 class Flower {
   constructor(d, fillColor, name) {
@@ -87,8 +88,9 @@ class Flower {
     this.speed = .3;
     this.fillColor = fillColor;
     this.angle = 0;
-    this.d = d/2;
+    this.d = round(d/2);
     this.name = name;
+    this.over = false;
   }
 
   move() {
@@ -98,7 +100,16 @@ class Flower {
     if (this.angle === 40) {
       this.angle = 0
     }
+    if(mouseX > this.x - this.diameter && 
+      mouseX < this.x + this.diameter &&
+      mouseY > this.y - this.diameter && 
+      mouseY < this.y + this.diameter) { 
+        this.over = true;
+      } else {
+        this.over = false;
+      }
   }
+
 
   display() {
     push();
@@ -108,24 +119,30 @@ class Flower {
     stroke("#554D46");
     rotate(this.angle);
     fill(this.fillColor);
-    // drawingContext.filter = "drop-shadow(0px 2px 3px black)";
-
-    // filter(THRESHOLD, .5);
-    // filter(INVERT);
     for (let i = 0; i < 10; i ++) {
     ellipse(0, this.diameter/4, 11, this.diameter/2);
     rotate(PI/5);
     }
     pop();
     if (this.name !== undefined) {
-      textAlign(CENTER)
-      textSize(20)
+      textAlign(CENTER);
+      textSize(20);
+      textFont('Optima');
+      fill("#cc2228");
+      text(this.name, 0, 0);
+      text(this.d, 0, 20);
+    }
+    if (this.over === true) {
+      textAlign(CENTER);
+      textSize(20);
       textFont('Optima');
       fill("#cc2228");
       text(this.name, 0, 0);
       text(this.d, 0, 20);
     }
     pop();
+    
+
   }
 }
 
@@ -144,16 +161,13 @@ function createFlower(data) {
     // // coral
     color(255, 52, 52, 200)
   ];
-
   // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
   let chosenColor = "#DAC8B2"; 
-  
-  // noStroke();
 
   let currentFlower = new Flower(d, chosenColor, name)
-  // drawing flowers
 
   flowerList.push(currentFlower)
+
 }
 
 function setup(){
@@ -178,17 +192,13 @@ function setup(){
       // // coral
       color(255, 52, 52, 200)
     ];
-
     // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
     let chosenColor = "#DAC8B2";
 
     let currentFlower = new Flower(d, chosenColor)
-    // drawing flowers
 
     flowerList.push(currentFlower)
 
-    // drawingContext.filter = 'blur(5px)';
-   
 	}
   console.log(flowerList)
 }
