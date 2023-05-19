@@ -78,7 +78,7 @@ function createBoard() {
 }
 
 
-
+//flip card
 function flipCard() {
   var cardId = this.getAttribute('data-id')
   cardsChosen.push(cardArray[cardId].name)
@@ -96,10 +96,10 @@ function checkForMatch() {
   const cards = document.querySelectorAll('img')
   const optionOneId = cardsChosenId[0]
   const optionTwoId = cardsChosenId[1]
-  if (cardsChosen[0] == cardsChosen[1]) {
+  if (cardsChosen[0] === cardsChosen[1]) {
     cardsWon++;
-    cards[optionOneId].setAttribute('src','image1.png')
-    cards[optionTwoId].setAttribute('src','image1.png')
+    cards[optionOneId].setAttribute('src','yes.png')
+    cards[optionTwoId].setAttribute('src','yes.png')
     cards[optionOneId].removeEventListener('click', flipCard)
     cards[optionTwoId].removeEventListener('click', flipCard)
     cardsWon.push(cardsChosen)
