@@ -15,10 +15,9 @@ var responseCount = responseArray.length;
 
 // Data input
 let dotButton = document.querySelector("#dotButton");
+let dotScale = document.querySelector("#dotScale");
 let diameter = 15;
 let maxDiameter = 150;
-
-let dotScale = document.querySelector("#dotScale");
 
 // questions.style.display = "none";
 
@@ -27,12 +26,10 @@ dotButton.addEventListener("mousedown", ()=>{
     if(diameter>maxDiameter){
       diameter=10;
       dotButton.style.width = `${diameter}px`
-      // dotButton.style.height = `${diameter}px`
       dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
     }else{
       diameter=diameter+1;
       dotButton.style.width = `${diameter}px`
-      // dotButton.style.height = `${diameter}px`
       dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
     }
   }, 20);
@@ -77,7 +74,7 @@ if (getCookie("responseArray") == ''){
   responseCount = responseArray.length;
 }
 
-let flowerList = []
+let flowerList = [];
 let over = false;
 
 class Flower {
@@ -124,14 +121,14 @@ class Flower {
     rotate(PI/5);
     }
     pop();
-    if (this.name !== undefined) {
-      textAlign(CENTER);
-      textSize(20);
-      textFont('Optima');
-      fill("#cc2228");
-      text(this.name, 0, 0);
-      text(this.d, 0, 20);
-    }
+    // if (this.name !== undefined) {
+    //   textAlign(CENTER);
+    //   textSize(20);
+    //   textFont('Optima');
+    //   fill("#cc2228");
+    //   text(this.name, 0, 0);
+    //   text(this.d, 0, 20);
+    // }
     if (this.over === true) {
       textAlign(CENTER);
       textSize(20);
@@ -141,33 +138,15 @@ class Flower {
       text(this.d, 0, 20);
     }
     pop();
-    
-
   }
 }
 
 function createFlower(data) {
   var d = data.scale;    
-  let name = data.name
-  var listOfColors = [
-    // blue
-    color(56, 101, 141, 200),
-    // jade green 
-    color(0, 160, 130, 200), 
-    // // pink
-    color(255, 191, 241, 200), 
-    // green
-    color(0, 104, 17, 200),
-    // // coral
-    color(255, 52, 52, 200)
-  ];
-  // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
+  let name = data.name;
   let chosenColor = "#DAC8B2"; 
-
-  let currentFlower = new Flower(d, chosenColor, name)
-
+  let currentFlower = new Flower(d, chosenColor, name);
   flowerList.push(currentFlower)
-
 }
 
 function setup(){
@@ -178,27 +157,11 @@ function setup(){
   frameRate(60)
 
   for (var i = 0; i < responseCount; i+=1) {
-    var d = responseArray[i].scale;    
-   
-    var listOfColors = [
-      // blue
-      color(56, 101, 141, 200),
-      // jade green 
-      color(0, 160, 130, 200), 
-      // pink
-      color(255, 191, 241, 200), 
-      // green
-      color(0, 104, 17, 200),
-      // // coral
-      color(255, 52, 52, 200)
-    ];
-    // let chosenColor = listOfColors[int(random(0, listOfColors.length))];
+    var d = responseArray[i].scale;  
+    let name = responseArray[i].name;  
     let chosenColor = "#DAC8B2";
-
-    let currentFlower = new Flower(d, chosenColor)
-
+    let currentFlower = new Flower(d, chosenColor, name);
     flowerList.push(currentFlower)
-
 	}
   console.log(flowerList)
 }
@@ -206,7 +169,6 @@ function setup(){
 function draw(){
   let bg = color("#13100C");
   background(bg);
-
 
   for (let i = 0; i < flowerList.length; i++) {
     flowerList[i].move();
