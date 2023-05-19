@@ -96,8 +96,8 @@ class Flower {
   move() {
     this.x += random(-this.speed, this.speed);
     this.y += random(-this.speed, this.speed);
-    this.angle += 40
-    if (this.angle === 40) {
+    this.angle += 10;
+    if (this.angle === 10) {
       this.angle = 0
     }
     if(mouseX > this.x - this.diameter && 
@@ -115,7 +115,7 @@ class Flower {
     push();
     translate(this.x, this.y);
     push();
-    strokeWeight(.5);
+    strokeWeight(.2);
     stroke("#554D46");
     rotate(this.angle);
     fill(this.fillColor);
