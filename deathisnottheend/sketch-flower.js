@@ -19,7 +19,10 @@ let dotScale = document.querySelector("#dotScale");
 let diameter = 15;
 let maxDiameter = 150;
 
-// questions.style.display = "none";
+let openView = true;
+if (openView) {
+  questions.style.display = "none";
+}
 
 dotButton.addEventListener("mousedown", ()=>{
   let interval = setInterval(() => {
@@ -62,6 +65,7 @@ submit.addEventListener("click", ()=>{
   questions.style.display = "none";
   createFlower(responseArray[responseArray.length-1])
 
+  openView = false;
 })
 
 if (getCookie("responseArray") == ''){
@@ -121,14 +125,14 @@ class Flower {
     rotate(PI/5);
     }
     pop();
-    // if (this.name !== undefined) {
-    //   textAlign(CENTER);
-    //   textSize(20);
-    //   textFont('Optima');
-    //   fill("#cc2228");
-    //   text(this.name, 0, 0);
-    //   text(this.d, 0, 20);
-    // }
+    if (!openView && this === flowerList[flowerList.length - 1]) {
+      textAlign(CENTER);
+      textSize(20);
+      textFont('Optima');
+      fill("#cc2228");
+      text(this.name, 0, 0);
+      text(this.d, 0, 20);
+    }
     if (this.over === true) {
       textAlign(CENTER);
       textSize(20);

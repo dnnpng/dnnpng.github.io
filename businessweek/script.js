@@ -1,11 +1,3 @@
-// let date = new Date("2023-02-15");
-// console.log(date);
-// date.setDate(date.getDate() - 15);
-
-// var newDate = date.getFullYear() + '-'+ (date.getMonth()+1) +'-'+date.getDate();
-// console.log(newDate);
-
-
 let startDate = "2023-01-30";
 let endDate = "2023-02-15";
 
@@ -32,7 +24,6 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
 
     let words = ["b", "u", "s", "i", "n", "e", "s", "s", "w", "e", "e", "k"];
     for (let j = 0; j < words.length; j++) {
-      // let letter[i] = document.getElementById('letter1');
       let letter = document.createElement('div')
       letter.classList.add("letter")
       letter.setAttribute("id", "letter"+[j+1]);
@@ -43,13 +34,12 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
     }
 
     
-    for(let i = 0; i < 13; i++){
+    for(let i = 0; i < 12; i++){
       let letter = document.getElementById('letter'+[i+1]);
       let candleStick1 = reversedResponse[i].close - reversedResponse[i].open;
-      console.log(candleStick1);
-      
+  
       let newTop;
-      
+  
 
       // if it's red
       if (candleStick1<=0) {
@@ -70,13 +60,6 @@ fetch(`https://yh-finance-complete.p.rapidapi.com/yhfhistorical?ticker=%5EGSPC&s
       let height = map(Math.abs(candleStick1), -10, 50, 0, 12);
       letter.style.transform = "scale(1," + height/10 + ")";
 
-      // let height = map(Math.abs(candleStick1), 0, 32, 528, 760);
-      // letter.style.fontVariationSettings = "'YTUC' " + height;
-      
-      
-     
-  
-      // console.log(newTop)
 
     }
   })
