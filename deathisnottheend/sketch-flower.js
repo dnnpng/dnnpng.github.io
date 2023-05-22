@@ -19,7 +19,7 @@ let dotScale = document.querySelector("#dotScale");
 let diameter = 15;
 let maxDiameter = 150;
 
-let openView = true;
+let openView = false;
 if (openView) {
   questions.style.display = "none";
 }
