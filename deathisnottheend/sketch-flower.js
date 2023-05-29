@@ -8,7 +8,8 @@ let responseArray = [
   {name:"Janice", scale: 70},
   {name:"Kevin", scale: 22},
   {name:"Talia", scale: 128},
-  {name:"Lakeisha", scale: 140}
+  {name:"Lakeisha", scale: 140},
+  {name:"John", scale: 1}
 ];
 
 var responseCount = responseArray.length;
@@ -29,11 +30,11 @@ dotButton.addEventListener("mousedown", ()=>{
     if(diameter>maxDiameter){
       diameter=10;
       dotButton.style.width = `${diameter}px`
-      dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
+      dotScale.innerHTML = Math.round(map(diameter, 15, maxDiameter, 1, 100));
     }else{
       diameter=diameter+1;
       dotButton.style.width = `${diameter}px`
-      dotScale.innerHTML = Math.round(map(diameter, 10, maxDiameter, 0, 100));
+      dotScale.innerHTML = Math.round(map(diameter, 15, maxDiameter, 1, 100));
     }
   }, 20);
   dotButton.addEventListener("mouseup", ()=>{

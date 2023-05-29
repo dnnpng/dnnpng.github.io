@@ -7,3 +7,9 @@
     font-family: Optima;
     src: url("./optima.woff");
 }
+
+@font-face {
+    font-family: Optima;
+    src: url("./optima_b.woff");
+    font-weight: bold;
+}
