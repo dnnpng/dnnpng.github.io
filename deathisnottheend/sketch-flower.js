@@ -4,12 +4,15 @@ let responseArray = [
   {name:"Chris", scale: 50}, 
   {name:"Dianna", scale: 30},
   {name:"Val", scale: 100},
-  {name:"Alex", scale: 5},
+  {name:"Alex", scale: 16},
   {name:"Janice", scale: 70},
   {name:"Kevin", scale: 22},
-  {name:"Talia", scale: 128},
-  {name:"Lakeisha", scale: 140},
-  {name:"John", scale: 1}
+  {name:"Talia", scale: 78},
+  {name:"Lakeisha", scale: 80},
+  {name:"Anna", scale: 40},
+  {name:"James", scale: 80},
+  {name:"Maria", scale: 46},
+  {name:"Zi", scale: 79}
 ];
 
 var responseCount = responseArray.length;
@@ -90,7 +93,7 @@ class Flower {
     this.speed = .3;
     this.fillColor = fillColor;
     this.angle = 0;
-    this.d = round(d/2);
+    this.d = round(map(d, 15, 150, 1, 100));
     this.name = name;
     this.over = false;
   }
