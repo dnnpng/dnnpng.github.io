@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-#questions{
+#questions {
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -18,11 +18,12 @@
     font-family: 'Optima';
 }
 
-#name{
+#name {
     position: absolute;
     top: 65vh;
     display: flex;
     flex-direction: column;
+    color: #cc2228;
     align-items: center;
     font-family: 'Optima';
 }
@@ -38,7 +39,7 @@ input {
     text-align: center;
   }
 
-#prompt{
+#prompt {
     display: flex;
     margin-top: 50px;
     margin-bottom: 10px;
@@ -50,15 +51,12 @@ input {
     text-align: center;
 }
 
-#dotButton{
-    /* position: fixed; */
+#dotButton {
     background-color: white;
     width: 11px;
     height: 11px;
     border-radius: 50%;
     transform: translateY(-25%);
-    /* transform-origin: center; */
-    /* filter: blur(2px); */
 }
 
 #dotScale {
@@ -66,20 +64,17 @@ input {
     color: 255, 237, 142;
 }
 
-#dotParent{
+#dotParent {
     top: 45vh;
     position: fixed;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     transform-origin: center;
 }
 
 #submit {
     background-color: transparent;
-    /* color:  rgb(255, 184, 0);
-    border: 1px solid rgb(255, 184, 0); */
     color: #cc2228;
     border: 1px solid #cc2228;
     border-radius: 20px;
