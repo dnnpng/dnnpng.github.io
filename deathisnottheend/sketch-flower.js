@@ -1,5 +1,22 @@
 // setCookie("responseArray", null, null);
 
+// custom cursor
+// document.body.onmousemove = function(e) {
+//   document.documentElement.style.setProperty (
+//     '--x', (
+//       e.clientX+window.scrollX
+//     )
+//     + 'px'
+//   );
+//   document.documentElement.style.setProperty (
+//     '--y', (
+//       e.clientY+window.scrollY
+//     ) 
+//     + 'px'
+//   );
+// }
+
+
 let responseArray = [
   {name:"Chris", scale: 50}, 
   {name:"Dianna", scale: 30},
